@@ -4,3 +4,6 @@ replicas: 2
 configmap:
   data:
     CUSTOM_HEADER: 'Welcome to NGINX on ROSA!'
+Service:
+  data:
+    appName: 'nginx-service-28327'
