@@ -11,7 +11,7 @@ RUN yum -y update
 RUN yum -y install nginx
 
 # Create and set permissions for Nginx cache directory
-sudo mkdir -p /var/cache/nginx/client_temp && chown -R nginx:nginx /var/cache/nginx
+ RUN mkdir -p /var/cache/nginx/client_temp && chown -R nginx:nginx /var/cache/nginx
 
 # Add custom index.html
 ADD index.html /usr/share/nginx/html/index.html
