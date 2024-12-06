@@ -6,4 +6,4 @@ configmap:
     CUSTOM_HEADER: 'Welcome to NGINX on ROSA!'
 Service:
   data:
-    appName: ' nginx-namespace-28327ap'
+    appName: ' nginx-namespace-28327'
