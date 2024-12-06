@@ -15,7 +15,7 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: nginx
+      - name: nginx-namespace-28327
         image: nginx:1.21  # Using the specified image
         ports:
         - containerPort: 80  # Default HTTP port
