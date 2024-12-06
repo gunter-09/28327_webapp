@@ -1,33 +1,28 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.appName }}
+  name: nginx-deployment-28327  # Replace with your desired name if needed
   labels:
-    app: {{ .Values.appName }}
+    app: nginx
 spec:
-  replicas: {{ .Values.replicas }}
+  replicas: 2  # Two replicas for high availability
   selector:
     matchLabels:
-      app: {{ .Values.appName }}
-      tier: frontend
+      app: nginx
   template:
     metadata:
       labels:
-        app: {{ .Values.appName }}
-        tier: frontend
-    spec: # Pod spec
+        app: nginx
+    spec:
       containers:
-      - name: mycontainer
-        image: "{{ .Values.image.name }}:{{ .Values.image.tag }}"
+      - name: nginx
+        image: nginx:1.21  # Using the specified image
         ports:
-        - containerPort: 80
-        envFrom:
-        - configMapRef:
-            name: {{ .Values.configmap.name }}
+        - containerPort: 80  # Default HTTP port
         resources:
           requests:
-            memory: "16Mi" 
-            cpu: "50m"    # 500milliCPUs (1/2 CPU)
+            memory: "16Mi"  # Minimum memory request
+            cpu: "50m"       # Minimum CPU request (half a CPU)
           limits:
-            memory: "128Mi"
-            cpu: "100m"
+            memory: "128Mi"  # Maximum memory limit
+            cpu: "100m"      # Maximum CPU limit (one CPU)
