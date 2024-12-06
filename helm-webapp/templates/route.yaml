@@ -1,12 +1,13 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  namespace:  nginx-namespace-28327  # Replace with your namespace
+  name: nginx-serviceroute-28327  # Replace with a unique name
+  namespace: nginx-namespace-28327  # Replace with your namespace
   labels: {}
 spec:
   to:
     kind: Service
-    name:  nginx-service-28327  # Replace with your service name
+    name: nginx-service-28327  # Replace with your service name
   port:
     targetPort: 80  # Assuming your service exposes port 80
   wildcardPolicy: None  # Optional, restricts paths
