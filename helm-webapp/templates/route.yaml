@@ -1,7 +1,7 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  namespace:  nginx-namespace-28327  # Replace with your namespace
+  namespace:  <your-namespace>  # Replace with your namespace
   labels: {}
 spec:
   to:
