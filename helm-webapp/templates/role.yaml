@@ -19,5 +19,5 @@ roleRef:
   name: nginx-role-28327
 subjects:
 - kind: ServiceAccount
-  name: nginx-service-account
+  name: nginx-sa-28327
   namespace: <your-namespace>
